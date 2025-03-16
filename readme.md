@@ -131,46 +131,40 @@ flowchart TD
     A[Start] --> B[Data Collection]
     B --> C[Data Cleaning]
     C --> D[Feature Engineering]
-    D --> E1[Technical Indicators]
-    D --> F[Prepare Training Data]
     
-    G1[News Data Collection] --> G2[Sentiment Analysis]
-    G2 --> G3[Sentiment Scoring]
+    D --> E1[Dataset without Indicators]
+    D --> E2[Dataset with Indicators]
     
-    G3 -- Possible Input --> F  %% Optional sentiment integration
-
-    F --> H1[Train Random Forest Model]
-    F --> H2[Train LSTM Model]
+    E1 --> F1[ARIMA Model]
+    E1 --> F2[LSTM Model]
+    E1 --> F3[Random Forest Model]
     
-    H1 --> I1[RF Predictions]
-    H2 --> I2[LSTM Predictions]
+    E2 --> G1[LSTM with Indicators]
+    E2 --> G2[Random Forest with Indicators]
     
-    I1 --> J[Evaluation]
-    I2 --> J
-    J --> L[Stock Prediction Visualization]
+    F1 --> H[Model Evaluation]
+    F2 --> H
+    F3 --> H
+    G1 --> H
+    G2 --> H
     
-    I1 --> K[Trading Recommendation]
-    I2 --> K
-    G3 --> K %% Trading recommendations use sentiment
-    K --> M[Trading Decision Output]
+    I[Sentiment Analysis] --> J[Sentiment Impact Assessment]
     
-    L --> N[End]
-    M --> N
-
-    classDef process fill:#90caf9,stroke:#0d47a1,stroke-width:1px
-    classDef data fill:#a5d6a7,stroke:#1b5e20,stroke-width:1px
-    classDef model fill:#ffcc80,stroke:#e65100,stroke-width:1px
-    classDef result fill:#ef9a9a,stroke:#b71c1c,stroke-width:1px
-    classDef start fill:#e1bee7,stroke:#4a148c,stroke-width:1px
-    classDef end fill:#e1bee7,stroke:#4a148c,stroke-width:1px
+    H --> K[Comparative Analysis]
+    J --> K
     
-    class B,C,D,G1,G2,G3 process
-    class E1,F data
-    class H1,H2 model
-    class I1,I2,J,L result
-    class K result
-    class A start
-    class N end
+    K --> L[Results Visualization]
+    L --> M[End]
+    
+    classDef process fill:#90caf9,stroke:#333,stroke-width:2px
+    classDef data fill:#bbf,stroke:#333,stroke-width:2px
+    classDef model fill:#bfb,stroke:#333,stroke-width:2px
+    classDef result fill:#fbb,stroke:#333,stroke-width:2px
+    
+    class B,C,D process
+    class E1,E2 data
+    class F1,F2,F3,G1,G2,I model
+    class H,J,K,L result
 ```
 
 ## 🛠️ Project Structure
