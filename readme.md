@@ -137,6 +137,8 @@ flowchart TD
     G1[News Data Collection] --> G2[Sentiment Analysis]
     G2 --> G3[Sentiment Scoring]
     
+    G3 -->|Optional| F  %% If sentiment is used in training
+
     F --> H1[Train Random Forest Model]
     F --> H2[Train LSTM Model]
     
@@ -145,13 +147,16 @@ flowchart TD
     
     I1 --> J[Evaluation]
     I2 --> J
-    G3 --> K[Trading Recommendation]
+    J --> L[Stock Prediction Visualization]
     
-    J --> L[Results Visualization]
-    K --> L
+    I1 --> K[Trading Recommendation]
+    I2 --> K
+    G3 --> K %% Trading recommendations use sentiment
+    K --> M[Trading Decision Output]
     
-    L --> M[End]
-    
+    L --> N[End]
+    M --> N
+
     classDef process fill:#90caf9,stroke:#0d47a1,stroke-width:1px
     classDef data fill:#a5d6a7,stroke:#1b5e20,stroke-width:1px
     classDef model fill:#ffcc80,stroke:#e65100,stroke-width:1px
@@ -160,11 +165,12 @@ flowchart TD
     classDef end fill:#e1bee7,stroke:#4a148c,stroke-width:1px
     
     class B,C,D,G1,G2,G3 process
-    class E1,F,K data
+    class E1,F data
     class H1,H2 model
     class I1,I2,J,L result
+    class K result
     class A start
-    class M end
+    class N end
 ```
 
 ## 🛠️ Project Structure
