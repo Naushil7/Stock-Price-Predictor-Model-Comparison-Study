@@ -137,7 +137,7 @@ flowchart TD
     G1[News Data Collection] --> G2[Sentiment Analysis]
     G2 --> G3[Sentiment Scoring]
     
-    G3 -->|Optional| F  %% If sentiment is used in training
+    G3 -.-> F  %% If sentiment is used in training
 
     F --> H1[Train Random Forest Model]
     F --> H2[Train LSTM Model]
