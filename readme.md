@@ -156,11 +156,12 @@ flowchart TD
     K --> L[Results Visualization]
     L --> M[End]
     
-    classDef process fill:#90caf9,stroke:#333,stroke-width:2px
-    classDef data fill:#bbf,stroke:#333,stroke-width:2px
-    classDef model fill:#bfb,stroke:#333,stroke-width:2px
-    classDef result fill:#fbb,stroke:#333,stroke-width:2px
+    classDef process fill:#4285F4,stroke:#333,stroke-width:2px,color:white
+    classDef data fill:#DB4437,stroke:#333,stroke-width:2px,color:white
+    classDef model fill:#0F9D58,stroke:#333,stroke-width:2px,color:white
+    classDef result fill:#F4B400,stroke:#333,stroke-width:2px,color:black
     
+    class A,M default
     class B,C,D process
     class E1,E2 data
     class F1,F2,F3,G1,G2,I model
