@@ -114,8 +114,6 @@ print(f"Trading Recommendation: {recommendation}")
 
 A comprehensive comparative study of machine learning models for stock price prediction. This project evaluates multiple forecasting approaches including ARIMA, LSTM, and Random Forest (with and without technical indicators) to determine their relative effectiveness. The study also incorporates sentiment analysis from financial news to explore its impact on predictive performance.
 
-![Model Comparison Visualization](https://raw.githubusercontent.com/Naushil7/StockPriceAnalyzer/main/assets/model_comparison.png)
-
 ## ✨ Features
 
 - **Model Comparison**: Rigorous evaluation of ARIMA, LSTM, and Random Forest models
@@ -133,40 +131,40 @@ flowchart TD
     A[Start] --> B[Data Collection]
     B --> C[Data Cleaning]
     C --> D[Feature Engineering]
+    D --> E1[Technical Indicators]
+    D --> F[Prepare Training Data]
     
-    D --> E1[Dataset without Indicators]
-    D --> E2[Dataset with Indicators]
+    G1[News Data Collection] --> G2[Sentiment Analysis]
+    G2 --> G3[Sentiment Scoring]
     
-    E1 --> F1[ARIMA Model]
-    E1 --> F2[LSTM Model]
-    E1 --> F3[Random Forest Model]
+    F --> H1[Train Random Forest Model]
+    F --> H2[Train LSTM Model]
     
-    E2 --> G1[LSTM with Indicators]
-    E2 --> G2[Random Forest with Indicators]
+    H1 --> I1[RF Predictions]
+    H2 --> I2[LSTM Predictions]
     
-    F1 --> H[Model Evaluation]
-    F2 --> H
-    F3 --> H
-    G1 --> H
-    G2 --> H
+    I1 --> J[Evaluation]
+    I2 --> J
+    G3 --> K[Trading Recommendation]
     
-    I[Sentiment Analysis] --> J[Sentiment Impact Assessment]
+    J --> L[Results Visualization]
+    K --> L
     
-    H --> K[Comparative Analysis]
-    J --> K
-    
-    K --> L[Results Visualization]
     L --> M[End]
     
-    classDef process fill:#f9f,stroke:#333,stroke-width:2px
-    classDef data fill:#bbf,stroke:#333,stroke-width:2px
-    classDef model fill:#bfb,stroke:#333,stroke-width:2px
-    classDef result fill:#fbb,stroke:#333,stroke-width:2px
+    classDef process fill:#90caf9,stroke:#0d47a1,stroke-width:1px
+    classDef data fill:#a5d6a7,stroke:#1b5e20,stroke-width:1px
+    classDef model fill:#ffcc80,stroke:#e65100,stroke-width:1px
+    classDef result fill:#ef9a9a,stroke:#b71c1c,stroke-width:1px
+    classDef start fill:#e1bee7,stroke:#4a148c,stroke-width:1px
+    classDef end fill:#e1bee7,stroke:#4a148c,stroke-width:1px
     
-    class B,C,D process
-    class E1,E2 data
-    class F1,F2,F3,G1,G2,I model
-    class H,J,K,L result
+    class B,C,D,G1,G2,G3 process
+    class E1,F,K data
+    class H1,H2 model
+    class I1,I2,J,L result
+    class A start
+    class M end
 ```
 
 ## 🛠️ Project Structure
