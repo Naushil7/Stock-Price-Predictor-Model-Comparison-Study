@@ -105,7 +105,8 @@ print(f"Google Sentiment Score: {google_sentiment:.2f}")
 print(f"Yahoo Sentiment Score: {yahoo_sentiment:.2f}")
 print(f"Overall Sentiment Score: {overall_sentiment:.2f}")
 print(f"Trading Recommendation: {recommendation}")
-```# Stock Price Predictor: Model Comparison Study 📈
+```
+# Stock Price Predictor: Model Comparison Study 📈
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
